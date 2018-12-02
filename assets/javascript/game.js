@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-
-
-<html>
-
-<body>
-    <h1>Guess what letter i'm thinking of</h1>
-
-<div id= "game">
-
-    <h2>Wins:<span id="wins-text"></span></h2>
-    <h2>Losses:<span id="losses-text"></span></h2>
-    <h2>Guesses Left:<span id="remaining-text"></span></h2>
-    <h2>Your Guesses So Far:<span id="youguessed-text"></span></h2>
-
-</div>
-
-<script type="text/javascript">
-    
-    var cpuChoices = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+var cpuChoices = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 
     var wins = 0;
     var winselement = document.getElementById ("wins-text");
@@ -25,36 +6,49 @@
     var losses = 0
     var losseselement = document.getElementById("losses-text");
 
-    var guessesRemaining = 9 
+    var guessesremaining = 9 
     var guessesleftElement = document.getElementById("remaining-text")
     
-    var guesses = document.getElementById("youguessed-text")
+    var youguessed = [];
+    var guessedletter = document.getElementById("youguessed-text");
+    console.log("hi")
+    
+     
     document.onkeyup = function(event) {
+        var guesses = event.key;
+        
+        youguessed.push(guesses);
 
-        guesses.textContent = event/key
-
-    document.onkeypress = function(event) {
-        guesses.textContent = event.key;
-
-        var cpuLetter = cpuChoices
-        [Math.floor(Math.random()*cpuChoices.length)];
+        var cpuLetter = cpuChoices[Math.floor(Math.random()*cpuChoices.length)];
             console.log(cpuLetter);
 
     
     
         if (guesses === cpuLetter) {
             wins++;
+            guessesremaining = 9;
+            youguessed = [];
+            cpuLetter = cpuChoices[Math.floor(Math.random()*cpuChoices.length)];
         }
         else {
-            guessesRemaining --;
+            guessesremaining --;
+            document.getElementById("remaining-text").innerHTML = guessesremaining;
+            document.getElementById("youguessed-text").innerHTML = youguessed.join(",")
+
         }
 
-        if(guessesRemaining === 0){
-            losses ++
+        if(guessesremaining === 0){
+            losses ++;
+            guessesremaining = 9;
+            youguessed = [];
+            cpuLetter = cpuChoices[Math.floor(Math.random()*cpuChoices.length)];
         }
 
-        guessesleftElement.textContent = guessesRemaining
-    }
-</script>
-</body>
-</html>
+       
+        losseselement.textContent = losses
+        winselement.textContent = wins
+        guessesleftElement.textContent = guessesremaining
+        guessedletter.textContent = youguessed
+        console.log("hi2")
+     }
+
