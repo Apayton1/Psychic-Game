@@ -11,7 +11,7 @@ var cpuChoices = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P
     
     var youguessed = [];
     var guessedletter = document.getElementById("youguessed-text");
-    console.log("hi")
+    
     
      
     document.onkeyup = function(event) {
@@ -21,14 +21,13 @@ var cpuChoices = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P
 
         var cpuLetter = cpuChoices[Math.floor(Math.random()*cpuChoices.length)];
             console.log(cpuLetter);
-
-    
     
         if (guesses === cpuLetter) {
             wins++;
             guessesremaining = 9;
             youguessed = [];
             cpuLetter = cpuChoices[Math.floor(Math.random()*cpuChoices.length)];
+            
         }
         else {
             guessesremaining --;
@@ -49,6 +48,6 @@ var cpuChoices = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P
         winselement.textContent = wins
         guessesleftElement.textContent = guessesremaining
         guessedletter.textContent = youguessed
-        console.log("hi2")
+        
      }
 

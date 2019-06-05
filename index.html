@@ -1,26 +1,56 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Psychic Game
-  </title>
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="reset-stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Psychic Game</title>
 </head>
-
 <body>
-    <h1>Guess what letter i'm thinking of</h1>
 
-<div id= "game">
+    <div class="jumbotron jumbotron-fluid text-center">
+        <div class="container">
+          <h1 class="display-4">Are You A Psychic ?</h1>
 
-    <h2>Wins:<span id="wins-text"></span></h2>
-    <h2>Losses:<span id="losses-text"></span></h2>
-    <h2>Guesses Left:<span id="remaining-text"></span></h2>
-    <h2>Your Guesses So Far:<span id="youguessed-text"></span></h2>
+          <br>
+
+          <img src="./assets/images/psychic.jpg" alt= "This is an image of a psychic" class="rounded-circle">
+
+          <h2 class="lead">guess what letter i'm thinking of !</h2>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+
+<div id= "box1" class= "col-sm-4">
+
+    <h2>Wins: <span id="wins-text"></span></h2>
+
+    <br>
+
+    <h2>Losses: <span id="losses-text"></span></h2>
+
+    <br>
+</div>
+
+<div id= "box2" class="col-sm-8">
+
+    <h2>Guesses Remaining: <span id="remaining-text"></span></h2>
+
+    <br>
+
+    <h2>So Far You've Guessed: <span id="youguessed-text"></span></h2>
 
 </div>
+</div>
+</div>
 <script src="assets/javascript/game.js"></script>
-
+  
 </body>
 </html>
 

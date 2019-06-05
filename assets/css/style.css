@@ -1,0 +1,26 @@
+body{
+    text-transform: capitalize;
+    font-family: 'Courgette', cursive;
+    text-align: center;
+    background-color:whitesmoke;
+
+}
+
+img{
+    height: 350px;
+}
+
+.jumbotron{
+    height: 400px;
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#box2{
+    margin-top: 130px;
+}
+
+#box1{
+    margin-top: 130px;
+}
